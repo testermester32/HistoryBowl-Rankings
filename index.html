@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" type="image/png" href="logo.png"/>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="rankStyle.css" rel="stylesheet" type="text/css" />
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <script src="script.js"></script>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button w3-black"><i class="fa fa-home"></i> Home</a>
+    
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-black" onclick="moveScreen()"><i class="fa fa-graduation-cap"></i> Rankings</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small w3-black" onclick="moveScreenContact()"><i class="fa fa-balance-scale"></i> Head-to-Head </a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-black" onclick="openForm()"><i class="fa fa-lock"></i> Admin</a>
+  </div>
+
+  <div class="form-popup" id="myForm">
+    <div class="container form-container">
+      <form action="action_page.php" method="post">
+        <div class="imgcontainer">
+          <img src="historyBowlIcon.png" alt="Avatar" class="avatar">
+        </div>
+  
+        <div class="container">
+          <label for="uname"><b>Admin Password</b></label>
+          <input type="password" placeholder="Enter Admin Password" id="uname" required>
+          <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()">
+          <label for="showPassword">Show Password</label>
+          <button type="button" class="verifyButton" onclick="compareText()">Verify</button>
+          <button type="button" class="cancelButton" onclick="closeForm()">Cancel</button>
+        </div>
+        <p id="errorMessage" style="display: none; color: black;">Invalid Password... Please try again</p>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">2023 NATIONAL HISTORY BOWL RANKINGS <span class="w3-hide-small"></span> </span>
+  </div>
+</div>
+<!-- Container (About Section) -->
+<div class="tab">
+  <button class="button-17" onclick="openTab(event, 'Ranking')" role="button">About</button>
+  <button class="button-18" onclick="openTab(event, 'Compare')" role="button">Contact</button>
+  </div>
+
+  <div id="Ranking" class="tabcontent">
+    <h3>National Rankings</h3>
+    <p> </p>
+
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for team..." title="Type in a team name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:10%;">Rank</th>
+    <th style="width:50%;">Team Name</th>
+    <th style="width:40%;">Game Points</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Poolesville</td>
+    <td>123</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Northwest</td>
+    <td>3463</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>BLah Blah</td>
+    <td>342</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Magruder</td>
+    <td>235</td>
+  </tr>
+</table>
+
+  </div>
+
+  <div id="Compare" class="tabcontent">
+    <h3>Compare Team Statistics</h3>
+    <p>Add comparison tool here</p>
+  </div>
+
+    <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+  </script>
+</body>
+</html>
